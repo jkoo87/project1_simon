@@ -85,7 +85,7 @@ h2 {
 #red {
   border: 10px solid #D62828;
   box-shadow: 0px 0px 60px 5px rgba(242,9,9,1);
-  transition: 0.5s;
+  transition: 0.3s;
 
 }
 
@@ -98,7 +98,7 @@ h2 {
   border: 10px solid #FCF40C;
   box-shadow: 0px 0px 60px 5px rgba(227,213,54,1);
   margin-bottom: 80px;
-  transition: 0.5s;
+  transition: 0.3s;
 
 }
 
@@ -110,7 +110,7 @@ h2 {
 #green {
   border: 10px solid #1B9211;
   box-shadow: 0px 0px 60px 5px rgba(10,199,23,1);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 #green:hover {
@@ -121,7 +121,7 @@ h2 {
 #blue {
   border: 10px solid #006EBC;
   box-shadow: 0px 0px 60px 10px rgba(0,53,212,1);
-  transition: 0.5s;
+  transition: 0.3s;
 }
 
 #blue:hover {
