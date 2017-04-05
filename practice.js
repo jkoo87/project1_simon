@@ -1,3 +1,37 @@
+// let startInterval = null;
+// let a = new Audio(["sound/51499__supadoh__sid-resbass-short-a-2.wav"]);
+// let b = new Audio(["sound/51532__supadoh__sid-resbass-short-f-3.wav"]);
+// let c = new Audio(["sound/51516__supadoh__sid-resbass-short-c3.wav"]);
+// let d = new Audio(["sound/51520__supadoh__sid-resbass-short-d-3.wav"]);
+// let e = new Audio(["sound/51527__supadoh__sid-resbass-short-e2.wav"]);
+// let f = new Audio(["sound/51531__supadoh__sid-resbass-short-f-2.wav"]);
+// let g = new Audio(["sound/51540__supadoh__sid-resbass-short-g-3.wav"]);
+// let h = new Audio(["sound/51511__supadoh__sid-resbass-short-c-2.wav"]);
+// let i = new Audio(["sound/51528__supadoh__sid-resbass-short-e3.wav"]);
+// let j = new Audio(["sound/51514__supadoh__sid-resbass-short-c1.wav"]);
+// let k = new Audio(["sound/51507__supadoh__sid-resbass-short-b2.wav"]);
+// let l = new Audio(["sound/51504__supadoh__sid-resbass-short-a3.wav"]);
+//
+// let backgroundMusic = [a,b,c,d,e,f,g,h,i,j,k,l];
+//
+//
+// function pickRandomSong() {
+//     let randomMelody = backgroundMusic[Math.floor(Math.random() * backgroundMusic.length)];
+//     randomMelody.play();
+//     var colorR = Math.floor((Math.random() * 256));
+//     var colorG = Math.floor((Math.random() * 256));
+//     var colorB = Math.floor((Math.random() * 256));
+//     $('h1').css("color", "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+//   }
+//
+// function randomSong() {
+//   startInterval = setInterval(function(){
+//     pickRandomSong();
+//   }, 150);
+// }
+// randomSong();
+
+
 let startButton = $("#startButton");
 let resetButton = $("#resetButton");
 
@@ -14,7 +48,7 @@ let blueSound = new Audio(["sound/51501__supadoh__sid-resbass-short-a-4.wav"]);
 
 let game = {
   intervalID: null,
-  sequenceLength: 10,
+  sequenceLength: 3,
   sequenceCount: 0,
   count: 0,
   score: 0,
@@ -25,6 +59,11 @@ let game = {
 }
 
 
+
+
+resetButton.hide();
+
+
 startButton.on("click", changeFormStart);
 
 function changeFormStart() {
@@ -32,7 +71,9 @@ function changeFormStart() {
   $(".livesTracker").css("display", "inline");
   $("header").css({"margin": "0", "transition": "2s"});
   $(".optionText").text("On your mark");
+  clearInterval(startInterval);
   startButton.hide();
+  resetButton.hide();
   redSound.play();
     setTimeout(function(){
       $(".optionText").text("Get Set");
@@ -46,6 +87,7 @@ function changeFormStart() {
     }, 4000);
     setTimeout(function(){
       randomSquence();
+      resetButton.show();
     }, 5000);
 
 }
@@ -141,7 +183,9 @@ function changeFormReset() {
   $("header").css({"margin": "200px 0 0 0", "transition": "2s"});
   $(".optionText").text("Play again?");
   clearInterval(game.intervalID);
+  randomSong();
   startButton.show();
+  resetButton.hide();
   game.randomSeries = [];
   game.playerSeries = [];
 }
