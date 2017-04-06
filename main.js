@@ -1,4 +1,3 @@
-// let backgroundMusicInterval = null;
 let a = new Audio(["sound/51499__supadoh__sid-resbass-short-a-2.wav"]);
 let b = new Audio(["sound/51532__supadoh__sid-resbass-short-f-3.wav"]);
 let c = new Audio(["sound/51516__supadoh__sid-resbass-short-c3.wav"]);
@@ -112,6 +111,7 @@ function newGame() {
 
 
 gameButtons.click(function(){
+
   game.playerPattern.push($(this));
   $('.optionText').text(game.playerPattern.length)
   checkPlayerSequence();
@@ -128,7 +128,7 @@ function checkPlayerSequence() {
       $('.optionText').text("-")
       livesLeft();
         setTimeout(function(){
-          displayPattern();
+          // displayPattern();
         }, 2000);
     }
     else if (i === game.playerPattern.length-1 && game.randomPattern.length === game.playerPattern.length) {
@@ -259,9 +259,6 @@ function changeFormReset() {
   game.randomPattern = [];
   game.playerSeries = [];
 }
-
-
-
 
 
 
