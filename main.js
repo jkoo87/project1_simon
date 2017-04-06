@@ -49,8 +49,6 @@ let blueSound = new Audio(["sound/51501__supadoh__sid-resbass-short-a-4.wav"]);
 
 let game = {
   intervalID: null,
-  // sequenceLength: 1,
-  // sequenceCount: 0,
   round: 0,
   score: 0,
   color : [redButton, yellowButton, greenButton, blueButton],
@@ -98,7 +96,6 @@ function newGame() {
     buttonLightSound(randomColor);
     game.randomPattern.push(randomColor);
    $(".optionText").text(game.randomPattern.length);
-    // console.log(game.randomPattern)
   }
 
 
@@ -113,10 +110,10 @@ gameButtons.click(function(){
 function checkPlayerSequence() {
   for (let i = 0; i < game.playerPattern.length; i++) {
     if($(game.playerPattern[i]).attr("id") != $(game.randomPattern[i]).attr("id")) {
-
       console.log(game.randomPattern[i]);
       console.log(game.playerPattern[i]);
       console.log("wrong");
+      livesLeft();
       displayPattern();
       game.playerPattern = [];
     }
@@ -135,6 +132,17 @@ function checkPlayerSequence() {
 }
 
 
+function livesLeft() {
+  if ($("#heart3").css("color") == "rgb(255, 0, 0)" && game.randomPattern.length >= 1) {
+    $("#heart3").text("X").css({"color": "white", "margin-left": "10px", "transition":"3s"});
+  } else if ($("#heart2").css("color") == "rgb(255, 0, 0)" && game.randomPattern.length >= 1) {
+    $("#heart2").text("X").css({"color": "white", "margin-left": "10px", "transition":"3s"});
+  } else if ($("#heart1").css("color") == "rgb(255, 0, 0)" && game.randomPattern.length >= 1) {
+    $("#heart1").text("X").css({"color": "white", "transition":"3s"});
+
+  }
+}
+
 
 function displayPattern() {
   let i = 0;
@@ -147,8 +155,6 @@ function displayPattern() {
     }
   }, 1200);
 }
-
-
 
 
 
@@ -197,6 +203,7 @@ function changeFormReset() {
   $(".livesTracker").css("display", "none");
   $("header").css({"margin": "200px 0 0 0", "transition": "2s"});
   $(".optionText").text("Play again?");
+  $(".redHearts").text(	"\u2764").css({"color": "red"});
   clearInterval(game.intervalID);
   randomSong();
   startButton.show();
