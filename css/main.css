@@ -45,16 +45,24 @@ h2 {
 
 .livesTracker {
     display: none;
+    justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .hearts {
     width: 300px;
     display: flex;
-}
-
-.hearts {
     color: red;
     font-size: 30px;
+}
+
+.repeatChances {
+  display: none;
+  align-self: flex-start;
+  margin-left: 25px;
+  color: green;
+  font-size: 30px;
+  margin-top: 0;
 }
 
 .highestScore {

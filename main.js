@@ -75,8 +75,10 @@ function changeFormStart() {
     $(".line").removeClass("buttonsInitial").children().addClass("gameButtonsTransform");
     $(".livesTracker").css({
         "display": "flex",
-        "justify-content": "space-around"
     });
+    $(".repeatChances").css({
+        "display": "flex",
+    })
     $("header").css({
         "margin": "0",
         "transition": "2s"
@@ -190,7 +192,7 @@ function checkPlayerSequence() {
 
 function livesLeft() {
     if ($("#heart3").css("color") == "rgb(255, 0, 0)" && game.randomPattern.length >= 1) {
-        $("#heart3").text("X").css({
+        $("#heart3").text("\u2718").css({
             "color": "white",
             "margin-left": "10px",
             "transition": "3s"
@@ -198,7 +200,7 @@ function livesLeft() {
         wrongAnswer("Wrong, Try Again!");
 
     } else if ($("#heart2").css("color") == "rgb(255, 0, 0)" && game.randomPattern.length >= 1) {
-        $("#heart2").text("X").css({
+        $("#heart2").text("\u2718").css({
             "color": "white",
             "margin-left": "10px",
             "transition": "3s"
@@ -206,13 +208,44 @@ function livesLeft() {
         wrongAnswer("Careful! You only have one heart left!");
 
     } else if ($("#heart1").css("color") == "rgb(255, 0, 0)" && game.randomPattern.length >= 1) {
-        $("#heart1").text("X").css({
+        $("#heart1").text("\u2718").css({
             "color": "white",
             "transition": "3s"
         });
         changeFormReset();
     }
 }
+
+
+replayButton.click(function() {
+    if ($("#chance3").css("color") == "rgb(0, 128, 0)") {
+        displayPattern();
+        $("#chance3").text("\u260F").css({
+            "color": "white",
+            "margin-left": "10px",
+            "transition": "3s"
+        });
+    } else if ($("#chance2").css("color") == "rgb(0, 128, 0)") {
+        displayPattern();
+        $("#chance2").text("\u260F").css({
+            "color": "white",
+            "margin-left": "10px",
+            "transition": "3s"
+        });
+
+
+    } else if ($("#chance1").css("color") == "rgb(0, 128, 0)") {
+        displayPattern();
+        $("#chance1").text("\u260F").css({
+            "color": "white",
+            "transition": "3s"
+        });
+    } else {
+        wrongAnswer("No more chances left!");
+    }
+});
+
+
 
 
 function correctAnswer(text) {
@@ -259,9 +292,7 @@ function displayPattern() {
 }
 
 
-replayButton.click(function() {
-    displayPattern();
-});
+
 
 
 
@@ -308,6 +339,7 @@ resetButton.on("click", changeFormReset);
 function changeFormReset() {
     $(".gameButtonsTransform").removeClass("gameButtonsTransform").parent().addClass("buttonsInitial");
     $(".livesTracker").css("display", "none");
+    $(".repeatChances").css("display", "none");
     $("header").css({
         "margin": "200px 0 0 0",
         "transition": "2s"
@@ -317,6 +349,9 @@ function changeFormReset() {
     $('.p1').text("Player Score: --")
     $(".redHearts").text("\u2764").css({
         "color": "red"
+    });
+    $(".chances").text("\u260E").css({
+        "color": "green"
     });
     randomSong();
     startButton.show();
