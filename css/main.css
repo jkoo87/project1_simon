@@ -1,29 +1,31 @@
 html {
-  background-color: white;
-  font-family: 'Freckle Face', cursive;
-  text-shadow: 2px 2px 4px grey;
+    background-color: white;
+    font-family: 'Freckle Face', cursive;
+    text-shadow: 2px 2px 4px grey;
 }
 
 body {
-  background-color: black;
-  width: 650px;
-  margin: 0 auto;
-  height: 100vh;
-  color: white;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background-color: black;
+    width: 650px;
+    margin: 0 auto;
+    height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
-header{
-  margin: 200px 0 0 0;
+
+header {
+    margin: 200px 0 0 0;
+    z-index: 1;
 }
 
 h1, h2 {
-  text-align: center;
-  background-color: rgba(107, 107, 107, 0.2);
-  width: 600px;
-  text-shadow: none;
-  color: white;
+    text-align: center;
+    background-color: rgba(107, 107, 107, 0.2);
+    width: 600px;
+    text-shadow: none;
+    color: white;
 }
 
 h1 {
@@ -31,129 +33,127 @@ h1 {
     margin: 10px 0 10px 0;
     font-size: 3em;
 }
+
 h2 {
     font-family: 'Cabin Sketch', cursive;
     padding: 10px 0;
     margin-top: 1px;
     height: 30px;
-    transition: 1s;
+    transition: 0.5s;
 }
 
+
 .livesTracker {
-  display: none;
+    display: none;
 }
 
 .hearts {
-  width: 300px;
-  display: flex;
+    width: 300px;
+    display: flex;
 }
 
-
-.hearts{
-  color: red;
-  font-size: 30px;
+.hearts {
+    color: red;
+    font-size: 30px;
 }
-
-
 
 .highestScore {
-  width: 300px;
-  text-align: right;
-  font-size: 20px;
-}
-.p1, .p2 {
-  margin: 0;
+    width: 300px;
+    text-align: right;
+    font-size: 20px;
 }
 
+.p1, .p2 {
+    margin: 0;
+}
 
 .livesLeft {
-  width: 600px;
-  margin: 10px 0 0 10px;
-  font-size: 20px;
-  font-family: 'Cabin Sketch', cursive;
+    width: 600px;
+    margin: 10px 0 0 10px;
+    font-size: 20px;
+    font-family: 'Cabin Sketch', cursive;
 }
 
 .gameContainer {
-  /*height: 100vh;*/
-  display: flex;
-  align-items:center;
-  justify-content: center;
+    /*height: 100vh;*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-
 .gameButtonsTransform {
-  width: 150px;
-  height: 150px;
-  border-radius: 50%;
-  transition: 1.5s;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    transition: 1.5s;
 }
 
 .buttonsInitial {
-  width: 150px;
-  /*height: 150px;*/
+    width: 150px;
+    /*height: 150px;*/
 }
 
 #red {
-  border: 10px solid #D62828;
-  box-shadow: 0px 0px 60px 5px rgba(242,9,9,1);
-  transition: 0.3s;
-
+    border: 10px solid #D62828;
+    box-shadow: 0px 0px 60px 5px rgba(242, 9, 9, 1);
+    transition: 0.3s;
 }
 
-#red:hover {
-  background-color:#D62828;
-  transition: 0.3s;
-}
+/*#red:hover {
+    background-color: #D62828;
+    transition: 0.3s;
+}*/
 
 #yellow {
-  border: 10px solid #FCF40C;
-  box-shadow: 0px 0px 60px 5px rgba(227,213,54,1);
-  margin-bottom: 80px;
-  transition: 0.3s;
-
+    border: 10px solid #FCF40C;
+    box-shadow: 0px 0px 60px 5px rgba(227, 213, 54, 1);
+    margin-bottom: 80px;
+    transition: 0.3s;
 }
 
-#yellow:hover {
-  background-color:#FCF40C;
-  transition: 0.3s;
-}
+/*#yellow:hover {
+    background-color: #FCF40C;
+    transition: 0.3s;
+}*/
 
 #green {
-  border: 10px solid #1B9211;
-  box-shadow: 0px 0px 60px 5px rgba(10,199,23,1);
-  transition: 0.3s;
+    border: 10px solid #1B9211;
+    box-shadow: 0px 0px 60px 5px rgba(10, 199, 23, 1);
+    transition: 0.3s;
 }
 
-#green:hover {
-  background-color:#1B9211;
-  transition: 0.3s;
-}
+/*#green:hover {
+    background-color: #1B9211;
+    transition: 0.3s;
+}*/
 
 #blue {
-  border: 10px solid #006EBC;
-  box-shadow: 0px 0px 60px 10px rgba(0,53,212,1);
-  transition: 0.3s;
+    border: 10px solid #006EBC;
+    box-shadow: 0px 0px 60px 10px rgba(0, 53, 212, 1);
+    transition: 0.3s;
 }
 
-#blue:hover {
-  background-color:#006EBC;
-  transition: 0.3s;
-}
-
+/*#blue:hover {
+    background-color: #006EBC;
+    transition: 0.3s;
+}*/
 
 .options {
     position: absolute;
     font-size: 22px;
-    text-align:center;
+    text-align: center;
 }
-
-
 
 .optionButtons {
-  font-family: 'Freckle Face', cursive;
-  font-size: 15px;
+    font-family: 'Freckle Face', cursive;
+    font-size: 15px;
 }
+
+#replayButton {
+  background-color: yellow;
+}
+
 .options p {
-  margin: 5px;
-  transition: 3s;
+    margin: 5px;
+    transition: 3s;
 }

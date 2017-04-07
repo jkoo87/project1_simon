@@ -1,54 +1,59 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-  <meta charset="utf-8">
-  <link rel="stylesheet" href="css/normalize.css" />
-  <link rel="stylesheet" href="css/main.css">
-<link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Freckle+Face" rel="stylesheet">
-<title>SIMON GAME</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch|Freckle+Face" rel="stylesheet">
+    <title>SIMON GAME</title>
 </head>
+
 <body>
 
-  <header>
-    <h1>Simon Says..</h1>
-    <h2>Welcome!</h2>
-  </header>
-  <div class="livesTracker">
-    <div class="hearts">
-      <div class="redHearts" id="heart1">&#10084;</div>
-      <div class="redHearts" id="heart2">&hearts;</div>
-      <div class="redHearts" id="heart3">&hearts;</div>
-    </div>
-    <div class="highestScore">
-        <p class="p1">Player Score: --</p>
-        <p class="p2">Highest Score: --</p>
-    </div>
-    <!-- <div class="livesLeft">3 lives left</div> -->
-  </div>
+    <header>
+        <h1>Simon Says..</h1>
+        <h2>Welcome!</h2>
+    </header>
 
-  <main class= "gameContainer">
-    <div class="line buttonsInitial">
-      <div class="gameButtons" id="red"></div>
-    </div>
-    <div class="line buttonsInitial">
-      <div class="gameButtons" id="yellow"></div>
-      <div class="gameButtons" id="blue"></div>
-    </div>
-    <div class="line buttonsInitial" class="line active">
-      <div class="gameButtons" id="green"></div>
+    <div class="livesTracker">
+        <div class="hearts">
+            <div class="redHearts" id="heart1">&#10084;</div>
+            <div class="redHearts" id="heart2">&#10084;</div>
+            <div class="redHearts" id="heart3">&#10084;</div>
+        </div>
+        <div class="highestScore">
+            <p class="p1">Player Score: --</p>
+            <p class="p2">Highest Score: --</p>
+        </div>
     </div>
 
-    <div class="options">
-      <p class="optionText">Are you ready?</p>
-      <button class="optionButtons" id="startButton">START</button>
-      <button class="optionButtons" id="resetButton">RESET</button>
-    </div>
+    <main class="gameContainer">
+        <div class="line buttonsInitial">
+            <div class="gameButtons" id="red"></div>
+        </div>
+        <div class="line buttonsInitial">
+            <div class="gameButtons" id="yellow"></div>
+            <div class="gameButtons" id="blue"></div>
+        </div>
+        <div class="line buttonsInitial" class="line active">
+            <div class="gameButtons" id="green"></div>
+        </div>
 
-  </main>
+        <div class="options">
+            <p class="optionText">Are you ready?</p>
+            <button class="optionButtons" id="startButton">START</button>
+            <button class="optionButtons" id="replayButton">Pattrun</button>
+            <button class="optionButtons" id="resetButton">RESET</button>
+
+        </div>
+
+    </main>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-  <script src="main.js"></script>
-  <!-- <script src="practice.js"></script> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="main.js"></script>
+    <!-- <script src="practice.js"></script> -->
 </body>
+
 </html>
