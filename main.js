@@ -20,24 +20,27 @@ function pickRandomSong() {
     randomMelody.play();
 }
 
-function pickRandomTextColor(tag) {
+function pickRandomTextColor(tag, background) {
     let colorR = Math.floor((Math.random() * 256));
     let colorG = Math.floor((Math.random() * 256));
     let colorB = Math.floor((Math.random() * 256));
-    $(tag).css("color", "rgb(" + colorR + "," + colorG + "," + colorB + ")");
+    $(tag).css(background, "rgb(" + colorR + "," + colorG + "," + colorB + ")");
 }
 
 
 
 function randomSong() {
     backgroundMusicInterval = setInterval(function() {
-        pickRandomTextColor('h1')
+        pickRandomTextColor('h1', 'color')
         pickRandomSong();
     }, 150);
 }
 randomSong();
 
 
+
+
+let crazyLevelInterval = null;
 let startButton = $("#startButton");
 let resetButton = $("#resetButton");
 let replayButton = $("#replayButton");
@@ -53,6 +56,7 @@ let yellowSound = new Audio(["sound/51533__supadoh__sid-resbass-short-f-4.wav"])
 let greenSound = new Audio(["sound/51513__supadoh__sid-resbass-short-c-4.wav"]);
 let blueSound = new Audio(["sound/51501__supadoh__sid-resbass-short-a-4.wav"]);
 
+let speed = 550;
 let game = {
     intervalID: null,
     round: 0,
@@ -179,15 +183,30 @@ function checkPlayerSequence() {
             setTimeout(function() {
                 let randomColor = game.color[Math.floor(Math.random() * game.color.length)];
                 game.randomPattern.push(randomColor);
+                randomCrazyLevel();
                 displayPattern();
             }, 800);
             setTimeout(function() {
                 $("h2").text("Level: " + game.randomPattern.length);
-            }, 2000);
+            }, 1500);
         }
     }
 }
 
+
+function randomCrazyLevel() {
+    if (game.randomPattern.length == 3 || game.randomPattern.length == 6 || game.randomPattern.length == 9) {
+        speed = 330;
+        crazyLevelInterval = setInterval(function() {
+            pickRandomTextColor('html', 'background-color')
+            pickRandomSong();
+        }, 150);
+    } else {
+        clearInterval(crazyLevelInterval);
+        $("html").css("background-color", "white");
+        speed = 600;
+    }
+}
 
 
 function livesLeft() {
@@ -277,6 +296,8 @@ function scoreBoard() {
 }
 
 
+
+
 function displayPattern() {
     if ($("#heart1").css("color") != "rgb(255, 255, 255)") {
         let i = 0;
@@ -287,7 +308,7 @@ function displayPattern() {
             if (i >= game.randomPattern.length) {
                 clearInterval(interval);
             }
-        }, 600);
+        }, speed);
     }
 }
 
@@ -332,11 +353,11 @@ function buttonLightSound(randomColor) {
 
 
 
-
-
 resetButton.on("click", changeFormReset);
 
 function changeFormReset() {
+    clearInterval(crazyLevelInterval);
+    $("html").css("background-color", "white");
     $(".gameButtonsTransform").removeClass("gameButtonsTransform").parent().addClass("buttonsInitial");
     $(".livesTracker").css("display", "none");
     $(".repeatChances").css("display", "none");
