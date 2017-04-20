@@ -7,5 +7,6 @@ Description: This is the classic memory game, Simon built from HTML, CSS, JavaSc
 3. As a user, the game is over after I fail to repeat the series three times.
 4. As a user, I should get three chances to see the previous series.
 5. As a user, I should be able to set highest scores.
+6. As a user, I should be able to hear randomized background song 
 
 <!-- # Installation -->

@@ -195,7 +195,7 @@ function checkPlayerSequence() {
 
 
 function randomCrazyLevel() {
-    if (game.randomPattern.length == game.randomPattern%3 = 0) {
+    if (game.randomPattern.length == 3 || game.randomPattern.length == 6 || game.randomPattern.length == 9) {
         speed = 330;
         crazyLevelInterval = setInterval(function() {
             pickRandomTextColor('html', 'background-color')
