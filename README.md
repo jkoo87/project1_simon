@@ -10,7 +10,9 @@ Description: This is the classic memory game, Simon built from HTML, CSS, JavaSc
 6. As a user, I should be able to hear randomized background song
 
 # Installation
+```bash
 $ git clone git@github.com:jkoo87/project_simon.git
 $ cd project_simon
 $ open index.html
-Or you can click https://jkoo87.github.io/project_simon/ to play. 
+```
+Or you can click https://jkoo87.github.io/project_simon/ to play.
